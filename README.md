@@ -4,7 +4,8 @@
 
 1. 
 ### Can solve using let... of ES6 syntax, the key point is `reversed = char + reversed`:the previous value is added after the char of each string; The same thing we can do withthe ascending for loop statement. 
- `function reverseStr(str) {
+ `
+ function reverseStr(str) {
     if (str) {
         let reversed = '';
         for (let character of str) {
@@ -17,7 +18,8 @@
 `
 2. 
 ### Sovling using destructuring assignment to swap is a clever method too. 
-`function reverseStr(str) {
+`
+function reverseStr(str) {
     if (str) {
         let arr = str.split('');
         for (let left = 0, right = arr.length -1; left < right; left++, right --) {
