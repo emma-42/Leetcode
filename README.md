@@ -3,7 +3,7 @@
 ##Question One ReverseString
 
 1. 
-### Can solve using let... of ES6 syntax, the key point is `reversed = char + reversed`:the previous value is added after the char of each string; The same thing we can do withthe ascending for loop statement. 
+#### Can solve using let... of ES6 syntax, the key point is `reversed = char + reversed`:the previous value is added after the char of each string; The same thing we can do withthe ascending for loop statement. 
  ```
  function reverseStr(str) {
     if (str) {
@@ -17,7 +17,7 @@
 }
 ```
 2. 
-### Sovling using destructuring assignment to swap is a clever method too. 
+#### Sovling using destructuring assignment to swap is a clever method too. 
 ```
 function reverseStr(str) {
     if (str) {
@@ -28,6 +28,18 @@ function reverseStr(str) {
         }
         return arr.join('');
 
+    }
+    return null;
+}
+```
+3. 
+#### Solving using reduce method
+```
+function reverse(str) {
+    if (str) {
+        return str.split('').reduce((accumulator, currentValue) => {
+            return currentValue + accumulator;
+        }, '');
     }
     return null;
 }
