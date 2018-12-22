@@ -108,4 +108,62 @@ function reverseInt(x) {
 [Does Javascript handle integer overflow and underflow? If yes, how?](https://stackoverflow.com/questions/19054891/does-javascript-handle-integer-overflow-and-underflow-if-yes-how)
 ****
 
+## Quetion 4 MaxChar
+1. **
+ #### Common String Questions
+ ```
+    - What is the most common character in the string
+    - Does String A have the same characters as String B (it is an anagram)
+    - Does the given string have any repeated characters in it?
+```
+**
+2. **
+#### First create a map: the key is the each string item, and if map key is existed, then the value is plus by 1, otherwise, it will set it to dedfaut by 1. Then create a variable with default value to be 0 and compare with map value to get the max value and assign that key to empty string too. 
+```
+// --- Directions
+// Given a string, return the character that is most
+// commonly used in the string.
+// --- Examples
+// maxChar("abcccccccd") === "c"
+// maxChar("apple 1231111") === "1"
 
+function maxChar(str) {
+    let map = {};
+    for (let item of str) {
+        map[item] = map[item] + 1 || 1; 
+    }
+    let maxNumber = 0;
+    let maxChar = '';
+    for (let key of str) {
+        if (map[key] > maxNumber) {
+            maxNumber = map[key];
+            maxChar = key;
+            
+        }
+    }
+    return maxChar;
+}
+```
+**
+
+## Question 5 FizzBuzz
+#### The key here is to organize well the business logic for else if statements
+```
+function fizzBuzz(n) {
+    let arr = []
+    for (let num = 1; num <= n; num++) {
+        if (num % 3 === 0 && num % 5 === 0) {
+            arr.push('FizzBuzz');
+        } else if (num % 3 === 0) {
+            arr.push('Fizz');
+        } else if (num % 5 === 0) {
+            arr.push('Buzz');
+        } else {
+            arr.push(num.toString())
+        }
+    }
+
+    return arr;
+
+}
+``` 
